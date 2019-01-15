@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Chat | Chat App</title>
+  </head>
+  <body class="chat">
+    <div class="chat__sidebar">
+      <h3>PEOPLE</h3>
+      <div id="users"></div>
+    </div>
+    <div class="chat__main">
+      <ol id="messages" class="chat__messages"></ol>
+      <div class="chat__footer">
+        <form id="message-form">
+          <input type="text" class="form-control" name="message" placeholder="Enter your message" autofocus autocomplete="off"/>
+          <button type="submit"> Send </button>
+        </form>
+        <button id="send-location"> Send Location </button>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+
+    <script id="message-template" type="text/template">
+      <li class="message">
+        <div class="message__title">
+          <h4>{{from}}</h4>
+          <span>{{createdAT}}</span>
+        </div>
+        <div class="message__body">
+          <p>{{text}}</p>
+        </div>
+      </li>
+    </script>
+
+    <script id="location-message-template" type="text/template">
+      <li class="message">
+        <div class="message__title">
+          <h4>{{from}}</h4>
+          <span>{{createdAT}}</span>
+        </div>
+        <div class="message__body">
+          <p>
+            <a href="{{url}}" target="_blank">My current location</a>
+          </p>
+        </div>
+      </li>
+    </script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/moment.js"></script>
+    <script src="/js/mustache.js"></script>
+    <script src="/js/deparam.js"></script>
+    <script src="/js/chat.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
