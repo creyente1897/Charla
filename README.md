@@ -27,4 +27,12 @@ Running the project
 ```sh
 node server/server.js
 ```
- Now you can open the project on `localhost:3000`
+###### OR
+
+You can also use nodemon
+
+```sh
+nodemon server/server.js
+```
+
+Now you can open the project on `localhost:3000`
